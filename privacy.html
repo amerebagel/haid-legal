@@ -24,7 +24,8 @@ table{border-collapse:collapse;width:100%;font-size:14px}td,th{border:1px solid 
 <p><strong>Calendar places.</strong> To place your calendar events on the map, HAID asks Apple Maps to look up the event's location text (for example "1200 EECS, Ann Arbor"). Event titles, times and other calendar details are never sent anywhere.</p>
 <h2>What is sent to our server</h2>
 <p><strong>Dining menus.</strong> To show menus, the app requests them from HAID's server. The request contains only your campus and a date range. It contains no name, account, or personal data. If our server doesn't have a day, the app may fetch that day's public menu directly from the dining provider's website.</p>
-<p><strong>Food logging.</strong> When you describe food you ate, the text you type is read <strong>on your iPhone</strong>, by Apple Intelligence's on-device model if your iPhone has it, otherwise by HAID's built-in reader. <strong>What you type never leaves your phone.</strong> Only the generic food names and amounts it finds (for example "almonds", 28 g), plus a random install ID, are sent to HAID's server to look up nutrition in the <strong>USDA FoodData Central</strong> database.</p>
+<p><strong>Food logging.</strong> When you describe food you ate, the text you type is read <strong>on your iPhone</strong> by Apple Intelligence's on-device model. <strong>Your description never leaves your phone.</strong> Foods that match the dining hall's menu use the menu's nutrition, on your phone. For other foods, only the generic food names and amounts (for example "almonds", 28 g), plus a random install ID, are sent to HAID's server to look up nutrition in the <strong>USDA FoodData Central</strong> database. If USDA has no match, Apple Intelligence estimates it on your phone and the app marks it "estimated".</p>
+<p>If your iPhone doesn't have Apple Intelligence, no AI is used: you pick each food from the dining hall menu or a USDA search. The words you type into the USDA search box (for example "grilled chicken"), plus the random install ID, are sent to HAID's server and USDA to find matches. The same search is used for "Find a closer match".</p>
 <ul>
 <li>The install ID is created by the app, isn't linked to your identity, and changes if you reinstall. It's used only to prevent overuse.
 <li>For rate limiting we keep salted, non-reversible hashes of the install ID and IP address for up to two days. We cache USDA results by generic food name, which isn't linked to anyone.
@@ -41,7 +42,7 @@ table{border-collapse:collapse;width:100%;font-size:14px}td,th{border:1px solid 
 <h2>Children</h2>
 <p>HAID is intended for college students and isn't directed to children under 13.</p>
 <h2>Accuracy</h2>
-<p>Nutrition values are estimates from dining-provider menus and USDA data. HAID isn't medical or dietary advice.</p>
+<p>Nutrition values are estimates from dining-provider menus and USDA data, and occasionally an on-device estimate (marked "estimated"). HAID isn't medical or dietary advice.</p>
 <h2>Your choices</h2>
 <ul>
 <li>Deny or revoke Health, Calendar and Location access in iOS Settings.
