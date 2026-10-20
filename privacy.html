@@ -8,7 +8,7 @@ a{color:var(--accent)}nav{margin-bottom:24px;font-size:14px}nav a{margin-right:1
 table{border-collapse:collapse;width:100%;font-size:14px}td,th{border:1px solid var(--rule);padding:6px 8px;text-align:left;vertical-align:top}
 .muted{color:var(--muted);font-size:14px}
 </style></head><body><main><nav><a href="./">HAID</a><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Use</a></nav><h1>HAID Privacy Policy</h1>
-<p><strong>Last updated:</strong> October 10, 2026 <strong>Contact:</strong> doctorsknockers@aol.com</p>
+<p><strong>Last updated:</strong> October 20, 2026 <strong>Contact:</strong> doctorsknockers@aol.com</p>
 <p>HAID ("House of AI Dining") helps you choose dining-hall meals. We built it to collect as little as possible. Most of what HAID uses never leaves your iPhone.</p>
 <h2>Independent app</h2>
 <p>HAID is an independent app made by a student. It is not affiliated with, endorsed by, sponsored by, or connected to the University of Michigan, Michigan Dining (MDining), or any other school or company. HAID doesn't use any school's logos, official colors, mascots or slogans; its nautical-and-amber theme is its own. School and dining hall names appear only to say where the menus come from.</p>
@@ -19,16 +19,17 @@ table{border-collapse:collapse;width:100%;font-size:14px}td,th{border:1px solid 
 <li><strong>Calendar events</strong> (used to plan around your classes)
 <li><strong>Location</strong> (used to pick a nearby dining hall)
 <li>Your goals, food log, favorites, hidden foods, dessert contracts and settings
+<li><strong>Body details for goals</strong> (weight, height, age, sex, activity level). These are used once to calculate your calorie and protein targets and aren't saved; only the targets are kept.
 </ul>
 <p>HAID does not use Health data for advertising or share it with anyone.</p>
 <p><strong>Calendar places.</strong> To place your calendar events on the map, HAID asks Apple Maps to look up the event's location text (for example "1200 EECS, Ann Arbor"). Event titles, times and other calendar details are never sent anywhere.</p>
 <h2>What is sent to our server</h2>
-<p><strong>Dining menus.</strong> To show menus, the app requests them from HAID's server. The request contains only your campus and a date range. It contains no name, account, or personal data. If our server doesn't have a day, the app may fetch that day's public menu directly from the dining provider's website.</p>
+<p><strong>Dining menus.</strong> To show menus, the app requests them from HAID's server. The request contains only your campus and a date range. It contains no name, account, or personal data. The menus on HAID's server are copied by HAID's developer from the dining provider's publicly posted menu pages; this involves no information about you. If our server doesn't have a day, the app may fetch that day's public menu directly from the dining provider's website, which, like any website you visit, receives your IP address.</p>
 <p><strong>Food logging.</strong> When you describe food you ate and you've allowed it, the text you type is sent through HAID's server to <strong>Google Gemini</strong>, which reads it and estimates each food's amount and nutrition. HAID asks before the first time and you can turn this off in Settings. HAID uses Gemini's free tier, under which Google may use what it receives to improve its products, so don't include anything personal in a food description. HAID's server passes the text along without storing it. If Gemini is off or unavailable, Apple Intelligence reads the text <strong>on your iPhone</strong> instead and it never leaves your phone. Either way, nutrition is an estimate you review before saving.</p>
-<p><strong>Ratings.</strong> If you give a dining hall item a thumbs up or down, HAID's server stores the hall, the item name, your vote and a one-way hash of the random install ID (so you have one vote per item), and shows everyone the totals. Votes aren't linked to you.</p>
+<p><strong>Ratings.</strong> If you give a dining hall item a thumbs up or down, HAID's server stores the hall, the item name, your vote, the time, and a one-way hash of the random install ID (so you have one vote per item), and shows everyone the totals. Votes aren't linked to you. They're kept until you take them back (tap the same thumb again), and because they can't be traced to you, we can't look up one person's votes later.</p>
 <ul>
-<li>The install ID is created by the app, isn't linked to your identity, and changes if you reinstall. It's used only to prevent overuse.
-<li>For rate limiting we keep salted, non-reversible hashes of the install ID and IP address for up to two days.
+<li>The install ID is a random number created by the app. It isn't linked to your identity and changes if you reinstall. It's used only to prevent overuse and to allow one vote per item.
+<li>For rate limiting we keep non-reversible hashes of the install ID and IP address for up to two days.
 </ul>
 <h2>Feedback and problem reports</h2>
 <p>If you use <strong>Settings → Report a problem</strong>, the app writes an email in your own email app addressed to doctorsknockers@aol.com. Nothing is sent until you tap Send. We receive your email address, your message, any screenshots you attach, and, if you leave "Include app details" on, the app version, iOS version, device type, campus, and when menus last loaded. We use this only to fix problems and reply to you. Ask us anytime to delete your messages.</p>
@@ -37,16 +38,18 @@ table{border-collapse:collapse;width:100%;font-size:14px}td,th{border:1px solid 
 <li><strong>Supabase</strong> hosts HAID's server and database. Like any web service, it receives your IP address with each request and keeps standard logs.
 <li><strong>Google (Gemini API)</strong> receives the food descriptions you type in Log food, if you've allowed it, to read them and estimate nutrition.
 <li><strong>Apple Maps</strong> looks up the location text of calendar events.
+<li><strong>The dining provider's website</strong> receives your IP address if the app fetches a menu from it directly (only when HAID's server doesn't have that day).
 </ul>
 <p>We don't sell data, show ads, or track you across other apps or websites.</p>
 <h2>Children</h2>
-<p>HAID is intended for college students and isn't directed to children under 13.</p>
+<p>HAID is intended for college students aged 18 and older. It isn't directed to children or teens, and we don't knowingly collect information from anyone under 18.</p>
 <h2>Accuracy</h2>
 <p>Dining hall nutrition comes from the dining provider's posted menus. Food you log by description is estimated by AI (Google Gemini or Apple Intelligence) from typical values. All of it is approximate. HAID isn't medical or dietary advice.</p>
 <h2>Your choices</h2>
 <ul>
 <li>Deny or revoke Health, Calendar and Location access in iOS Settings.
 <li>Turn off "Read food with Google Gemini" in Settings to keep descriptions on your iPhone.
+<li>Take back a rating by tapping the same thumb again.
 <li>Delete the app to erase everything stored on your device.
 <li>Questions or requests: doctorsknockers@aol.com.
 </ul>
